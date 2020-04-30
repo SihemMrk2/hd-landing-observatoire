@@ -1,0 +1,98 @@
+<div class="modal-contact">
+  <div class="modal-content">
+    <form id='contactFormObservatoire'>
+      <div class="form">
+        <form [formGroup]="contactForm">
+
+
+          <div class="single-input">
+            <h3>Nom</h3>
+            <bdv-input-text [size]="'M'"
+            formControlName="familyname" name="familyname" ngDefaultControl type="familyname"></bdv-input-text>
+            <div class="error" *ngIf="familyname.errors && isSubmitted">
+              <span *ngIf="familyname.errors.required">
+                Veuillez saisir votre nom.
+              </span>
+            </div>
+          </div>
+
+
+          <div class="single-input">
+            <h3>Prénom</h3>
+            <bdv-input-text [size]="'M'"
+            formControlName="firstname" name="firstname" ngDefaultControl type="firstname"></bdv-input-text>
+            <div class="error" *ngIf="firstname.errors && isSubmitted">
+              <span *ngIf="firstname.errors.required">
+                Veuillez saisir votre prénom.
+              </span>
+            </div>
+          </div>
+
+          <div class="single-input">
+            <h3>Société</h3>
+            <bdv-input-text [size]="'M'"
+            formControlName="company" name="company" ngDefaultControl type="company"></bdv-input-text>
+            <div class="error" *ngIf="company.errors && isSubmitted">
+              <span *ngIf="company.errors.required">
+                Veuillez saisir le nom de votre société.
+              </span>
+            </div>
+          </div>
+
+          <div class="single-input">
+            <h3>Poste</h3>
+            <bdv-input-text [size]="'M'"
+                            formControlName="job" name="job" ngDefaultControl type="job"></bdv-input-text>
+            <div class="error" *ngIf="job.errors && isSubmitted">
+              <span *ngIf="job.errors.required">
+                Veuillez saisir le poste que vous occupez.
+              </span>
+            </div>
+          </div>
+          
+
+          <div class="single-input">
+            <h3>Téléphone</h3>
+            <bdv-input-text [size]="'M'"
+                            formControlName="phone" name="phone" ngDefaultControl type="tel"></bdv-input-text>
+            <div class="error" *ngIf="phone.errors && isSubmitted">
+              <span *ngIf="phone.errors.required">
+                Veuillez saisir un numéro de téléphone.
+              </span>
+              <span *ngIf="phone.errors.pattern">
+                Le format du numéro de téléphone est erroné.
+              </span>
+            </div>
+          </div>
+
+          <div class="single-input">
+            <h3>Mail</h3>
+            <bdv-input-text [size]="'M'"
+                            formControlName="email" name="email" ngDefaultControl></bdv-input-text>
+
+            <div class="error" *ngIf="email.errors && isSubmitted">
+                    <span *ngIf="email.errors.required">
+                        Veuillez saisir un email.
+                    </span>
+                    <span *ngIf="email.errors.pattern">
+                        Le format de l'email est erroné.
+                    </span>
+                </div>
+          </div>
+          <div class="single-input">
+          </div>
+        </form>
+      </div>
+
+    </form>
+      <div class="modal-footer">
+        <div class="modal-footer-left">
+        </div>
+        <div class="modal-footer-right">
+          <mat-checkbox labelPosition="after">Abonnement Newsletter</mat-checkbox>
+          <mat-slide-toggle labelPosition="after">Connaissez-vous déjà nos solutions? Découvrir</mat-slide-toggle>
+          <button (click)="save()"><img src="./../../../assets/img/Icon awesome-cloud-download-alt.png"><span> Télécharger le document </span></button>
+        </div>  
+      </div>
+  </div>
+</div>

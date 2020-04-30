@@ -1,0 +1,261 @@
+<div class="observatoire-page">
+
+  <div class="actu-covid" *ngIf="display">
+    <div>
+      <p class="title">COVID-19</p>
+      <p class="description">La crise sanitaire dans laquelle est plongée la France depuis plusieurs semaines a mis en apnée plusieurs activités de l'immobilier à des degrés très variables. Homadata Insights apporte toutes les hypothèses de réflexion nécessaires pour préparer, après la récession, le rebond salvateur permettant aux différents métiers de retrouver le "nouveau normal"</p>
+    </div>
+    <div class="cross" (click)="closeUp()"></div>
+  </div>
+
+  <div class="observatoire-header">
+
+    <div class="color"></div>
+
+    <div class="container">
+
+      <div class="details">
+        <div class="titles">
+          <h1>{{landingDetails?.h1}}</h1>
+          <h2>{{landingDetails?.h2_primary}}</h2>
+          <h3>{{landingDetails?.h2_secondary}}</h3>
+        </div>
+        <div class="intro">
+          <p>{{landingDetails?.meta_description}}</p>
+          <p>{{landingDetails?.subinfo}}</p>
+        </div>
+        <a href="/observatoire#observatoire-form"><button><img src="./../../../assets/img/Icon awesome-cloud-download-alt.png"><p> Télécharger la version complète de l'observatoire </p></button></a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="observatoire-info">
+
+    <div class="left">
+      <div class="first-bubble"></div>
+      <div class="seconde-bubble"></div>
+      <div class="third-bubble"></div>
+    </div>
+
+    <div class="center">
+      <div class="infos">
+        <div class="info">
+          <div class="icone">
+            <img src="assets/img/illustrations/covid19.svg"/>
+          </div>
+          <div class="details">
+            <p class="title">{{landingDetails?.h3_1_title}}</p>
+            <p class="description">{{landingDetails?.h3_1_content}}</p>
+          </div>
+        </div>
+        <div class="info">
+          <div class="icone">
+            <img src="assets/img/icon-euro.svg"/>
+          </div>
+          <div class="details">
+            <p class="title">{{landingDetails?.h3_2_title}}</p>
+            <p class="description">{{landingDetails?.h3_2_content}}</p>
+          </div>
+        </div>
+        <div class="info">
+          <div class="icone">
+            <img src="assets/img/icon-risque.svg"/>
+          </div>
+          <div class="details">
+            <p class="title">{{landingDetails?.h3_3_title}}</p>
+            <p class="description">{{landingDetails?.h3_3_content}}</p>
+          </div>
+        </div>
+        <div class="info">
+          <div class="icone">
+            <img src="assets/img/icon-prise.svg"/>
+          </div>
+          <div class="details">
+            <p class="title">{{landingDetails?.h3_4_title}}</p>
+            <p class="description">{{landingDetails?.h3_4_content}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <p class="focus">Avec 15 autres chapitres et focus spéciaux</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="fourth-bubble"></div>
+      <div class="fifth-bubble"></div>
+    </div>
+
+  </div>
+
+  <div class="liseuse">
+
+    <div class="pages">
+
+      <!-- <div class="page">
+        <div class="precedent"></div>
+        <div class="pagenb">1/1</div>
+        <div class="suivant"></div>
+      </div> -->
+
+      <div class="deverouiller">
+        <img src="/assets/img/white-icons/Icon awesome-unlock-alt.png"/>
+        <a href="/observatoire#observatoire-form"><p>Déverouillez les 44 pages</p></a>
+      </div>
+
+    </div>
+
+    <div class="liseuse-center">
+      <div>
+        <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=fxt5g53pr" width="1000px" height="1000px" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+
+      </div>
+    </div>
+
+    <div class="deverouiller-bottom">
+      <img src="/assets/img/white-icons/Icon awesome-unlock-alt.png"/>
+      <a href="/observatoire#observatoire-form"><p>Déverouillez les 44 pages</p></a>
+    </div>
+
+  </div>
+
+  <div class="observatoire-details">
+    <p class="title">{{landingDetails?.meta_title}}</p>
+    <div class="separator" [ngStyle]="{'width.px': width, 'marginLeft':marginLeft, 'marginRight': marginRight}"></div>
+    <div class="details">
+      <div class="left">
+        <p class="source">{{landingDetails?.GC_h2_title}}</p>
+        <p class="text">{{landingDetails?.GC_h2_subinfo}}</p>
+      </div>
+      <div class="right">
+        <p class="source">{{landingDetails?.GC_h2_title_2}}</p>
+        <p class="text">{{landingDetails?.GC_h2_description}}</p>
+      </div>
+    </div>
+    <div class="details-bottom">
+      <p>{{landingDetails?.GC_h4_3}}</p>
+    </div>
+  </div>
+
+  <div id="observatoire-form">
+    <div class="left">
+      <div class="first-bubble"></div>
+      <div class="seconde-bubble"></div>
+    </div>
+    <div class="center">
+      <p class="title">{{landingDetails?.h3_8_title}}</p>
+      <div class="separator" [ngStyle]="{'width.px': width, 'marginLeft':marginLeft, 'marginRight': marginRight}"></div>
+      <div class="modal-contact">
+        <div class="modal-content">
+          <form id='contactFormObservatoire'>
+            <div class="form">
+              <form [formGroup]="contactForm">
+
+
+                <div class="single-input">
+                  <h3>Nom</h3>
+                  <input formControlName="familyname" name="familyname" ngDefaultControl type="familyname">
+                  <div class="error" *ngIf="familyname.errors && isSubmitted">
+                  <span *ngIf="familyname.errors.required">
+                    Veuillez saisir votre nom.
+                  </span>
+                  </div>
+                </div>
+
+
+                <div class="single-input">
+                  <h3>Prénom</h3>
+                  <input formControlName="firstname" name="firstname" ngDefaultControl type="firstname">
+                  <div class="error" *ngIf="firstname.errors && isSubmitted">
+                  <span *ngIf="firstname.errors.required">
+                    Veuillez saisir votre prénom.
+                  </span>
+                  </div>
+                </div>
+
+                <div class="single-input">
+                  <h3>Société</h3>
+                  <input formControlName="company" name="company" ngDefaultControl type="company">
+                  <div class="error" *ngIf="company.errors && isSubmitted">
+                  <span *ngIf="company.errors.required">
+                    Veuillez saisir le nom de votre société.
+                  </span>
+                  </div>
+                </div>
+
+                <div class="single-input">
+                  <h3>Poste</h3>
+                  <input formControlName="job" name="job" ngDefaultControl type="job">
+                  <div class="error" *ngIf="job.errors && isSubmitted">
+                  <span *ngIf="job.errors.required">
+                    Veuillez saisir le poste que vous occupez.
+                  </span>
+                  </div>
+                </div>
+
+
+                <div class="single-input">
+                  <h3>Téléphone</h3>
+                  <input formControlName="phone" name="phone" ngDefaultControl type="tel">
+                  <div class="error" *ngIf="phone.errors && isSubmitted">
+                  <span *ngIf="phone.errors.required">
+                    Veuillez saisir un numéro de téléphone.
+                  </span>
+                    <span *ngIf="phone.errors.pattern">
+                    Le format du numéro de téléphone est erroné.
+                  </span>
+                  </div>
+                </div>
+
+                <div class="single-input">
+                  <h3>Mail</h3>
+                  <input formControlName="email" name="email" ngDefaultControl>
+
+                  <div class="error" *ngIf="email.errors && isSubmitted">
+                        <span *ngIf="email.errors.required">
+                            Veuillez saisir un email.
+                        </span>
+                    <span *ngIf="email.errors.pattern">
+                            Le format de l'email est erroné.
+                        </span>
+                  </div>
+                </div>
+                <div class="single-input">
+                </div>
+              </form>
+            </div>
+
+          </form>
+          <div class="modal-footer">
+            <div class="modal-footer-left">
+            </div>
+            <div class="modal-footer-right">
+              <mat-checkbox labelPosition="after">Abonnement Newsletter</mat-checkbox>
+              <mat-slide-toggle labelPosition="after">Connaissez-vous déjà nos solutions?</mat-slide-toggle>
+              <a href='https://homadata.fr/nos-solutions'>Découvrir</a>
+              <button (click)="save()"><img src="./../../../assets/img/Icon awesome-cloud-download-alt.png"><span> Télécharger le document </span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="observatoire-book-container">
+        <div class="observatoire-book">
+          <p>Disponible en version papier en quantité limitée</p>
+          <button><span> Achetez la version papier </span></button>
+        </div>
+      </div> -->
+
+    </div>
+    <div class="right">
+      <div class="third-bubble"></div>
+      <div class="fourth-bubble"></div>
+      <div class="fifth-bubble"></div>
+    </div>
+
+  </div>
+
+</div>
